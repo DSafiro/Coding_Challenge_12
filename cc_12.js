@@ -1,9 +1,9 @@
 // Task 1: Created Revenue Metric Card
 const dashboardDiv = document.getElementById("dashboard"); // Selects dashboard container using getElementById
 const dashboardQuery = document.querySelector("#dashboard"); // Selects dashboard container using querySelector
-const revenueCard = document.createElement("div"); // Creates new div element to reperesent metric card
-const profitCard = document.createElement("div")
-const expensesCard = document.createElement("div")
+const revenueCard = document.createElement("div"); // Creates new div element to represent revenue card
+const profitCard = document.createElement("div"); // Creates new div element to represent profit card
+const expensesCard = document.createElement("div"); // Creates new div element to represent expenses card
 
 revenueCard.setAttribute("class", "metric-card"); // Assigns class of metric-card style
 revenueCard.setAttribute("id", "revenueCard"); // Assigns ID of revenue card
@@ -84,5 +84,3 @@ customerCards.forEach(card => {
         event.stopPropagation(); // Clicking a customer card logs only "Customer card has been clicked."
     });
 }); // Applies event listener to all customer cards
-
-
