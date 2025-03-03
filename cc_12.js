@@ -17,3 +17,12 @@ function createRevenueCard () {
 
 createRevenueCard(); // Calls create revenue card function
 dashboardDiv.appendChild(revenueCard); // Adds revenue card to dashboard container
+
+// Task 2: Updated Metric Cards via Array Conversions
+const metricCards = document.querySelectorAll(".metric-card"); // Selects all elements with the class "metric-card"
+const metricCardsArray = [...metricCards]; // Converts metric cards into an array
+
+metricCardsArray.forEach(card => {
+    card.innerText += " - Updated"; // Adds updated to each card's inner text
+    card.style.backgroundColor = "teal"; // Changes background color to teal
+}); // Method to modify each metric card in the array
