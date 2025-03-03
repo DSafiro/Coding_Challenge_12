@@ -16,7 +16,7 @@ function createRevenueCard () {
 }; // Function to create revenue card
 
 createRevenueCard(); // Calls create revenue card function
-dashboardDiv.appendChild(revenueCard); // Adds revenue card to dashboard container
+dashboardDiv.appendChild(revenueCard); // Appends revenue card to dashboard container
 
 // Task 2: Updated Metric Cards via Array Conversions
 const metricCards = document.querySelectorAll(".metric-card"); // Selects all elements with the class "metric-card"
@@ -26,3 +26,18 @@ metricCardsArray.forEach(card => {
     card.innerText += " - Updated"; // Adds updated to each card's inner text
     card.style.backgroundColor = "teal"; // Changes background color to teal
 }); // Method to modify each metric card in the array
+
+// Task 3: Implemented Dynamic Inventory List
+const inventoryList = document.getElementById("inventoryList"); // Selects inventory list using getElementId
+
+function addInventoryItem (productName) {
+    const productItem = document.createElement("li"); // Creates new list element
+    productItem.setAttribute("class", "product-item"); // Assigns class of product-item style
+    productItem.setAttribute("data-product", productName); // Assigns custom data attribute
+    productItem.innerText = productName; // Sets inner text to product name
+    productItem.addEventListener("click", () => {
+        inventoryList.removeChild(productItem); // If click is recorded -> removes product item from list
+    }); // Function to add and remove product items from list
+    
+    inventoryList.appendChild(productItem); // Appends productItem to list
+};
